@@ -18,6 +18,12 @@ public class hello {
         hello helloWorld = new hello();
        
         helloWorld.sayMessage();
+        
+        helloWorld.testMethod();
+    }
+    
+    private void testMethod() {
+        System.out.println("This is a test method");
     }
 
     private void sayMessage() { 
