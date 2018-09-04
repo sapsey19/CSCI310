@@ -12,10 +12,10 @@ package com.github.sapsey19.hello;
  *
  * @author ssapsey
  */
-public class HelloWorld {
+public class hello {
     public static void main(String [] args) throws Exception
     {
-        HelloWorld helloWorld = new HelloWorld();
+        hello helloWorld = new hello();
        
         helloWorld.sayMessage();
     }
