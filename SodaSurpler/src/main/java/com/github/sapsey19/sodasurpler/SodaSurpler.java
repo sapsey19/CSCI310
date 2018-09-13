@@ -4,24 +4,24 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 public class SodaSurpler {
-    public static void main(String [] args) throws Exception 
-    {
+
+    public static void main(String[] args) {
         SodaSurpler soda = new SodaSurpler();
         soda.go();
     }
     Scanner in;
     PrintStream out;
     int e, f, c;
-    void go() throws Exception
-    {
+    int d = 0;
+
+    void go() {
         in = new Scanner(System.in);
         out = System.out;
-        for(;;)
-        {
-            haveTestCase();
-            readTestCase();
-            solve();
-        }
+        d = 0;
+        haveTestCase();
+        readTestCase();
+        solve();
+
     }
 
     private boolean haveTestCase() {
@@ -29,12 +29,23 @@ public class SodaSurpler {
     }
 
     private void readTestCase() {
+
         e = in.nextInt();
         f = in.nextInt();
         c = in.nextInt();
+
     }
 
-    private void solve() {
-        System.out.println(e + "" +  f +  "" + c);
+    void solve() {
+        int temp, r;
+        e += f;
+        f = 0;
+        while (e >= c) {
+            temp = e / c;
+            r = e % c;
+            d += temp;
+            e = temp + r;
+        }
+        System.out.println(d);
     }
 }
