@@ -1,4 +1,4 @@
-# Java HW
+# Java HW Practice
 
 ## Assignment 2 Practice
 
