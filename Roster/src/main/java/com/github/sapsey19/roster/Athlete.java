@@ -12,9 +12,11 @@ package com.github.sapsey19.roster;
 class Athlete {
     String name;
     String sport;
+    String year;
     
-    Athlete(String _name, String _sport) {
+    Athlete(String _name, String _sport, String _year) {
         name = _name;
         sport = _sport;
+        year = _year;
     }
 }

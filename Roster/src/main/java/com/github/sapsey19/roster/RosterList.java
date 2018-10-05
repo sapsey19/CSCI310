@@ -11,23 +11,32 @@ import java.util.ArrayList;
  *
  * @author sapse
  */
-public class RosterList extends ArrayList<Athlete>{
+public class RosterList extends ArrayList<Athlete> {
 
-     String getSport(Athlete athleteName) {
-        for(Athlete athlete: this)
-        {
-            if(athlete == athleteName)
+    String getSport(Athlete athleteName) {
+        for (Athlete athlete : this) {
+            if (athlete == athleteName) {
                 return athlete.sport;
+            }
         }
         return "Athlete not found.";
     }
-     
-     boolean hasAthlete(Athlete athleteName)
-     {
-         for(Athlete athlete: this)
-             if(athlete == athleteName)
-                 return true;
-         return false;
-     }
-    
+
+    boolean hasAthlete(Athlete athleteName) {
+        for (Athlete athlete : this) {
+            if (athlete == athleteName) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    String getYear(Athlete athleteName) {
+        for (Athlete athlete : this) {
+            if (athlete == athleteName) {
+                return athlete.year;
+            }
+        }
+        return "Athlete name not found.";
+    }
 }
