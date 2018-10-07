@@ -5,6 +5,8 @@
  */
 package com.github.sapsey19.roster;
 
+import java.util.Collections;
+
 /**
  *
  * @author sapse
@@ -19,5 +21,6 @@ public class Main {
         System.out.println("Is John in the roster?: " + roster.contains(john));
         System.out.println("Joe's sport: " + roster.getSport(joe));
         System.out.println("Joe's year: " + roster.getYear(joe));
+        
     }
 }

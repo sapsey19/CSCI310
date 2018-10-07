@@ -47,8 +47,8 @@ public class MainTest {
         String[] args = null;
         Main.main(args);
         RosterList roster = new RosterList();
-        Athlete jacob = new Athlete("Jacob", "Swimming");
-        Athlete kevin = new Athlete("Kevin", "Football");
+        Athlete jacob = new Athlete("Jacob", "Swimming", "Sophomore");
+        Athlete kevin = new Athlete("Kevin", "Football", "Senior");
         roster.add(jacob);
         
         assertTrue(roster.contains(jacob));
@@ -65,7 +65,7 @@ public class MainTest {
         
         assertFalse(roster.hasAthlete(jacob));
         
-        
+        assertEquals(roster.getYear(kevin), "Senior");    
         
     }
     
