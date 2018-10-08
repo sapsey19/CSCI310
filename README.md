@@ -6,3 +6,5 @@ SOLUTION: https://github.com/sapsey19/CSCI310/tree/master/SodaSurpler/src/main/j
 
 Nice work!
 
+- Project 2:
+I created a type of roster that lets the user add players, along with their sport and school year. There are also methods to remove players, check if a player is in the list, and return the sport and school year of the player. The roster implements an ArrayList. 
