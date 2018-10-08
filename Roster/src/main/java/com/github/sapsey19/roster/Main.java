@@ -5,8 +5,6 @@
  */
 package com.github.sapsey19.roster;
 
-import java.util.Collections;
-
 /**
  *
  * @author sapse
