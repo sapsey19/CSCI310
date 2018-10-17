@@ -11,3 +11,8 @@ Nice work!
 I created a type of roster that lets the user add players, along with their sport and school year. There are also methods to remove 
 players, check if a player is in the list, and return the sport and school year of the player. The roster implements an ArrayList.
 SOLUTION: https://github.com/sapsey19/CSCI310/tree/master/Roster/src/main/java/com/github/sapsey19/roster
+
+
+- Project 3: 
+I created a program that sorts arrays on different threads. Then I compare the time of the sorts (quicksort, selectsort, and bubblesort), and assert that quicksort is the fastest, and bubble is the slowest. 
+SOLUTION: https://github.com/sapsey19/CSCI310/tree/master/ThreadingArrays/src/main/java/com/github/sapsey19/threadingarrays
