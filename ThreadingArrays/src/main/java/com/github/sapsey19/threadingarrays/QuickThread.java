@@ -12,9 +12,9 @@ import java.util.logging.Logger;
  *
  * @author sapse
  */
-public class BubbleThread implements Runnable {
+public class QuickThread implements Runnable {
 
-    BubbleSort sorter = new BubbleSort();
+    QuickSort sorter = new QuickSort();
     Thread thread = new Thread(this);
 
     void start() {
@@ -25,11 +25,11 @@ public class BubbleThread implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Begin processing on " + Thread.currentThread().getName() + "(Bubble Sort)");
+        System.out.println("Begin processing on " + Thread.currentThread().getName() + "(Quick Sort)");
         long start = System.currentTimeMillis();
         sorter.go();
         ms = System.currentTimeMillis() - start;
-        System.out.println("End processing on " + Thread.currentThread().getName() + "(Bubble Sort)");
+        System.out.println("End processing on " + Thread.currentThread().getName() + "(Quick Sort)");
     }
 
     void waitTilFinish() {
