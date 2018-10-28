@@ -11,13 +11,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        DBHelper db = new DBHelper();
+        //DBHelper db = new DBHelper();
 
-        //db.createNewDatabase(DEFAULT_DB);
-        //db.createNewTable();
-        db.insert("Raw Materials", 3000);
-        db.insert("Semifinished Goods", 4000);
-        db.insert("Finished Goods", 5000);
-        db.selectAll();
+       // db.createNewDatabase("MenuTest");
+       // db.createNewTable();
+       // db.insert("Hamburger", 500);
+       // db.insert("Hotdog", 400);
+       // db.insert("Salad", 600);      
+       // db.selectAll();
+        //System.out.println("After Updating:");
+        //db.update(3, "Finished Goods", 9000);
+       
     }
 }
