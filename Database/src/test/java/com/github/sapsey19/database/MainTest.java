@@ -5,6 +5,8 @@
  */
 package com.github.sapsey19.database;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.not;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -40,18 +42,31 @@ public class MainTest {
     @Test
     public void testDatabase() {
         DBHelper db = new DBHelper();
-//        db.createNewDatabase("Menu");
-//        db.createNewTable();
-//        db.insert("Hamburger", 500);
-//        db.insert("Hotdog", 400);
-//        db.insert("Salad", 600);
-//        db.insert("Cheeseburger", 600);
-//        db.insert("Double Cheeseburger", 750);
-        //System.out.println(temp);
-        // db.getPriceGreaterThan(700);
-        // String temp = db.getPriceGreaterThan(700);
+        db.createNewDatabase("Menu");
+        //db.createNewTable();
+        db.delete(1);
+        db.delete(2);
+        db.delete(3);
+        db.delete(4);
+        db.delete(5);
+        db.insert("Hamburger", 500);
+        db.insert("Hotdog", 400);
+        db.insert("Salad", 600);
+        db.insert("Cheeseburger", 600);
+        db.insert("Double Cheeseburger", 750);
+
         assertEquals(db.getPriceGreaterThan(700), "Double Cheeseburger");
         assertEquals(db.getPriceLessThan(500), "Hotdog");
+
+        db.update(2, "Hotdog", 500);       
+        assertThat(db.getPriceLessThan(450), is(not("Hotdog")));
+
+        db.update(5, "Double Cheeseburger", 800);
+        assertEquals(db.getPriceGreaterThan(750), "Double Cheeseburger");
+
+        db.delete(5);
+        assertThat(db.getPriceGreaterThan(750), is(not("Hotdog")));
+
     }
 
 }

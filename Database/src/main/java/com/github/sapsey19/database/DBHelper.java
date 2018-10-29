@@ -134,18 +134,18 @@ public class DBHelper {
         return result;
     }
      
-       public void update(int itemName, String name, double capacity) {
-        String sql = "UPDATE warehouses SET name = ? , "
-                + "capacity = ? "
-                + "WHERE id = ?";
+       public void update(int itemNumber, String itemName, int priceInCents) {
+        String sql = "UPDATE menu SET itemName = ? , "
+                + "priceInCents = ? "
+                + "WHERE itemNumber = ?";
  
         try (Connection conn = this.connect();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
  
             // set the corresponding param
-            pstmt.setString(1, name);
-            pstmt.setDouble(2, capacity);
-            pstmt.setInt(3, itemName);
+            pstmt.setString(1, itemName);
+            pstmt.setInt(2, priceInCents);
+            pstmt.setInt(3, itemNumber);
             // update 
             pstmt.executeUpdate();
         } catch (SQLException e) {
@@ -153,14 +153,14 @@ public class DBHelper {
         }
     }
        
-       public void delete(int itemName) { 
-        String sql = "DELETE FROM warehouses WHERE id = ?";
+       public void delete(int itemNumber) { 
+        String sql = "DELETE FROM menu WHERE itemNumber = ?";
  
         try (Connection conn = this.connect();
                 PreparedStatement pstmt = conn.prepareStatement(sql)) {
  
             // set the corresponding param
-            pstmt.setInt(1, itemName);
+            pstmt.setInt(1, itemNumber);
             // execute the delete statement
             pstmt.executeUpdate();
  
