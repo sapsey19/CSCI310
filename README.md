@@ -16,3 +16,9 @@ SOLUTION: https://github.com/sapsey19/CSCI310/tree/master/Roster/src/main/java/c
 - Project 3: 
 I created a program that sorts arrays on different threads. Then I compare the time of the sorts (quicksort, selectsort, and bubblesort), and assert that quicksort is the fastest, and bubble is the slowest. 
 SOLUTION: https://github.com/sapsey19/CSCI310/tree/master/ThreadingArrays/src/main/java/com/github/sapsey19/threadingarrays
+
+
+
+- Project 4
+I created a database that stores the names of menu items, along with their menu number and price. The testing file tests for creation, updates, reads, and deletes. There is a screenshot with the tests passing in the Database folder. 
+SOLUTION: https://github.com/sapsey19/CSCI310/tree/master/Database/src/test/java/com/github/sapsey19/database
