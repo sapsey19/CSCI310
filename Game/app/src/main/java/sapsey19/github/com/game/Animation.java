@@ -38,7 +38,6 @@ public class Animation {
     public void draw(Canvas canvas, Rect destination) {
         if(!isPlaying)
             return;
-
         scaleRect(destination);
         canvas.drawBitmap(frames[frameIndex], null, destination, new Paint());
     }

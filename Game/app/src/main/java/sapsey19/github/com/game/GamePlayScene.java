@@ -21,13 +21,13 @@ public class GamePlayScene implements Scene {
 
     public GamePlayScene() {
         player = new RectPlayer(new Rect(100, 100, 200, 200), Color.rgb(0, 0, 255));
-        point = new Point(Constants.SCREEN_WIDTH / 2, 3 * Constants.SCREEN_HEIGHT / 4);
+        point = new Point(Constants.SCREEN_WIDTH / 2, 7 * Constants.SCREEN_HEIGHT / 8);
         player.update(point);
-        obstacleManager = new ObstacleManager(200, 350, 75, Color.BLACK);
+        obstacleManager = new ObstacleManager(100, 100, 75, Color.BLACK);
     }
 
     public void reset() {
-        point = new Point(Constants.SCREEN_WIDTH / 2, 3 * Constants.SCREEN_HEIGHT / 4);
+        point = new Point(Constants.SCREEN_WIDTH / 2, 7 * Constants.SCREEN_HEIGHT / 8);
         player.update(point);
         obstacleManager = new ObstacleManager(200, 350, 75, Color.BLACK);
         movingPlayer = false;
@@ -56,7 +56,7 @@ public class GamePlayScene implements Scene {
             Paint paint = new Paint();
             paint.setTextSize(100);
             paint.setColor(Color.RED);
-            drawCenterText(canvas, paint, "IT'S OVER!");
+            drawCenterText(canvas, paint, "IT'S OVER!!");
         }
     }
 
@@ -80,7 +80,7 @@ public class GamePlayScene implements Scene {
     public void receiveTouch(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                if (!gameOver && player.getRectangle().contains((int) event.getX(), (int) event.getY()))
+                if (!gameOver && player.getRectangle().contains((int) event.getX(),(int)event.getY()))
                     movingPlayer = true;
                 if (gameOver && System.currentTimeMillis() - gameOverTime >= 2000) {
                     reset();
@@ -89,7 +89,7 @@ public class GamePlayScene implements Scene {
                 break;
             case MotionEvent.ACTION_MOVE:
                 if (movingPlayer && !gameOver)
-                    point.set((int) event.getX(), (int) event.getY());
+                    point.set((int) event.getX(), 7 * Constants.SCREEN_HEIGHT/8);
                 break;
             case MotionEvent.ACTION_UP:
                 movingPlayer = false;
@@ -97,3 +97,23 @@ public class GamePlayScene implements Scene {
         }
     }
 }
+
+//    public void receiveTouch(MotionEvent event) {
+//        switch (event.getAction()) {
+//            case MotionEvent.ACTION_DOWN:
+//                if (!gameOver && player.getRectangle().contains((int) event.getX(), (int) event.getY()))
+//                    movingPlayer = true;
+//                if (gameOver && System.currentTimeMillis() - gameOverTime >= 2000) {
+//                    reset();
+//                    gameOver = false;
+//                }
+//                break;
+//            case MotionEvent.ACTION_MOVE:
+//                if (movingPlayer && !gameOver)
+//                    point.set((int) event.getX(), (int) event.getY());
+//                break;
+//            case MotionEvent.ACTION_UP:
+//                movingPlayer = false;
+//                break;
+//        }
+//    }
