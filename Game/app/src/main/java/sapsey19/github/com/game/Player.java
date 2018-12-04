@@ -10,10 +10,9 @@ import android.graphics.Rect;
 import android.graphics.drawable.Animatable;
 
 
-public class RectPlayer implements GameObject {
+public class Player implements GameObject {
 
     private Rect rectangle;
-    private int color;
 
     private Animation idle;
     private Animation idle2;
@@ -21,41 +20,37 @@ public class RectPlayer implements GameObject {
     private Animation walkLeft;
     private AnimationManager animManager;
 
+    public boolean moving = false;
+
 
     public Rect getRectangle() {
         return rectangle;
     }
 
-    public RectPlayer(Rect rectangle, int color) {
+    public Player(Rect rectangle) {
         this.rectangle = rectangle;
-        this.color = color;
 
         BitmapFactory bf = new BitmapFactory();
         Bitmap idleImg = bf.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.idle);
         Bitmap walk1 = bf.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.walk1);
         Bitmap walk2 = bf.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.walk2);
+        Bitmap idleImg2 = bf.decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.idle2);
 
         idle = new Animation(new Bitmap[]{idleImg}, 2);
         walkRight = new Animation(new Bitmap[]{walk1, walk2}, 0.5f);
+        idle2 = new Animation(new Bitmap[]{idleImg2}, 2);
 
         Matrix m = new Matrix();
         m.preScale(-1, 1);
-
-        idleImg = Bitmap.createBitmap(walk1, 0, 0, idleImg.getWidth(), idleImg.getHeight(), m, false);
         walk1 = Bitmap.createBitmap(walk1, 0, 0, walk1.getWidth(), walk1.getHeight(), m, false);
         walk2 = Bitmap.createBitmap(walk2, 0, 0, walk2.getWidth(), walk2.getHeight(), m, false);
-
-        idle2 = new Animation(new Bitmap[] {idleImg}, 2);
         walkLeft = new Animation(new Bitmap[]{walk1, walk2}, 0.5f);
 
-        animManager = new AnimationManager(new Animation[] {idle, walkRight, walkLeft});
+        animManager = new AnimationManager(new Animation[]{idle, walkRight, walkLeft, idle2});
     }
 
     @Override
     public void draw(Canvas canvas) {
-        //Paint paint = new Paint();
-       //paint.setColor(color);
-        //canvas.drawRect(rectangle, paint);
         animManager.draw(canvas, rectangle);
     }
 
@@ -66,23 +61,16 @@ public class RectPlayer implements GameObject {
 
     public void update(Point point) {
         float oldLeft = rectangle.left;
-        boolean movedLeft = false;
-
-        rectangle.set(point.x - rectangle.width() / 2, point.y - rectangle.height() / 2, point.x + rectangle.width() / 2, point.y + rectangle.height() / 2);
-
         int state = 0;
-        if (rectangle.left - oldLeft > 5) {
-            state = 1;
-            movedLeft = true;
-        }
-        else if (rectangle.left - oldLeft < -5) {
-            state = 2;
-            movedLeft = false;
-        }
-        else if(movedLeft)
-            state = 3;
 
+        rectangle.set(point.x - 72, point.y - 51, point.x + 72, point.y + 51);
+
+        if (rectangle.left - oldLeft > 5)
+            state = 1;
+        else if (rectangle.left - oldLeft < -5)
+            state = 2;
         animManager.playAnim(state);
         animManager.update();
     }
 }
+

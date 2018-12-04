@@ -8,8 +8,8 @@ import android.graphics.drawable.Drawable;
 public class Obstacle implements GameObject {
     private Rect rectangle;
 
-    public Obstacle(int rectHeight, int startX, int startY) {
-        rectangle = new Rect(startX, 0, startX + 50, 50);
+    public Obstacle(int startX) {
+        rectangle = new Rect(startX, 0, startX + 90, 90);
     }
 
     public Rect getRectangle() {
@@ -21,20 +21,19 @@ public class Obstacle implements GameObject {
         rectangle.bottom += y;
     }
 
-    public boolean playerCollide(RectPlayer player) {
+    public boolean playerCollide(Player player) {
         return Rect.intersects(rectangle, player.getRectangle()) || Rect.intersects(rectangle, player.getRectangle());
     }
 
     @Override
     public void draw(Canvas canvas) {
-        Drawable drawable = Constants.CURRENT_CONTEXT.getResources().getDrawable(R.drawable.hurt);
+        Drawable drawable = Constants.CURRENT_CONTEXT.getDrawable(R.drawable.buzzsaw);
         drawable.setBounds(rectangle);
         drawable.draw(canvas);
     }
 
     @Override
     public void update() {
-
     }
 
     public void update(Point point) {
