@@ -24,6 +24,6 @@ I created a database that stores the names of menu items, along with their menu 
 SOLUTION: https://github.com/sapsey19/CSCI310/tree/master/Database/src/test/java/com/github/sapsey19/database
 
 - Final Project
-I created a small game in Android Studio. The program is multi-threaded, with multiple classes.
+I created a small game in Android Studio. The program is multi-threaded, with multiple classes. I followed a tutorial to get the game loop set up, which forms the backbone of my game. The tutorial can be found here: https://youtu.be/OojQitoAEXs
 Source Code: https://github.com/sapsey19/CSCI310/tree/master/Game/app/src/main/java/sapsey19/github/com/game
 APK: https://github.com/sapsey19/CSCI310/tree/master/Game/app/release
