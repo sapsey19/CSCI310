@@ -1,4 +1,5 @@
 #CSCI310
+Owner - Sean Apsey
 
 - Project 1:
 I did the Kattis probelm "sodasurpler." The files "TestCase1" and "TestCase2" are .png screenshots of the two test cases passing. 
