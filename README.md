@@ -28,3 +28,4 @@ SOLUTION: https://github.com/sapsey19/CSCI310/tree/master/Database/src/test/java
 I created a small game in Android Studio. The program is multi-threaded, with multiple classes. I followed a tutorial to get the game loop set up, which forms the backbone of my game. The tutorial can be found here: https://youtu.be/OojQitoAEXs
 Source Code: https://github.com/sapsey19/CSCI310/tree/master/Game/app/src/main/java/sapsey19/github/com/game
 APK: https://github.com/sapsey19/CSCI310/tree/master/Game/app/release
+I added Unit Tests to make sure that the obstacle manager was correctly added obstacles. A screenshot of the tests passing can be found here: https://github.com/sapsey19/CSCI310/blob/master/Game/PassedTest.png
