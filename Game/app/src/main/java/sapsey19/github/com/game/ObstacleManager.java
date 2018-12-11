@@ -11,7 +11,7 @@ import java.util.Queue;
 
 public class ObstacleManager implements GameObject {
     //higher index == lower on screen == higher y value
-    private ArrayList<Obstacle> obstacles;
+    protected ArrayList<Obstacle> obstacles;
     private int obstacleGap;
     private int obstacleHeight;
 
@@ -20,7 +20,7 @@ public class ObstacleManager implements GameObject {
 
     protected int score = 0;
 
-    private Queue<Obstacle> addedOb;
+    protected Queue<Obstacle> addedOb;
 
     public ObstacleManager(int obstacleGap, int obstacleHeight) {
         this.obstacleGap = obstacleGap;
@@ -41,8 +41,8 @@ public class ObstacleManager implements GameObject {
     }
 
     public boolean playerCollide(Player player) {
-        for (Obstacle drop : obstacles) {
-            if (drop.playerCollide(player))
+        for (Obstacle ob : obstacles) {
+            if (ob.playerCollide(player))
                 return true;
         }
         return false;
