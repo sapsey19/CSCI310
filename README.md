@@ -19,10 +19,13 @@ I created a program that sorts arrays on different threads. Then I compare the t
 SOLUTION: https://github.com/sapsey19/CSCI310/tree/master/ThreadingArrays/src/main/java/com/github/sapsey19/threadingarrays
 
 
-
-- Project 4
+- Project 4:
 I created a database that stores the names of menu items, along with their menu number and price. The testing file tests for creation, updates, reads, and deletes. There is a screenshot with the tests passing in the Database folder. 
 SOLUTION: https://github.com/sapsey19/CSCI310/tree/master/Database/src/test/java/com/github/sapsey19/database
+
+- Project 5:
+I created a simple two-activity app that displays text and switches from one activity to the other. 
+SOLUTION: https://github.com/sapsey19/CSCI310/tree/master/AndroidHelloWorld/app/src/main/java/sapsey19/github/com/helloworld
 
 - Final Project
 I created a small game in Android Studio. The program is multi-threaded, with multiple classes. I followed a tutorial to get the game loop set up, which forms the backbone of my game. The tutorial can be found here: https://youtu.be/OojQitoAEXs
