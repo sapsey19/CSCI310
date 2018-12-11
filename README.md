@@ -1,4 +1,5 @@
 #CSCI310
+Owner - Sean Apsey
 
 - Project 1:
 I did the Kattis probelm "sodasurpler." The files "TestCase1" and "TestCase2" are .png screenshots of the two test cases passing. 
@@ -22,3 +23,8 @@ SOLUTION: https://github.com/sapsey19/CSCI310/tree/master/ThreadingArrays/src/ma
 - Project 4
 I created a database that stores the names of menu items, along with their menu number and price. The testing file tests for creation, updates, reads, and deletes. There is a screenshot with the tests passing in the Database folder. 
 SOLUTION: https://github.com/sapsey19/CSCI310/tree/master/Database/src/test/java/com/github/sapsey19/database
+
+- Final Project
+I created a small game in Android Studio. The program is multi-threaded, with multiple classes. I followed a tutorial to get the game loop set up, which forms the backbone of my game. The tutorial can be found here: https://youtu.be/OojQitoAEXs
+Source Code: https://github.com/sapsey19/CSCI310/tree/master/Game/app/src/main/java/sapsey19/github/com/game
+APK: https://github.com/sapsey19/CSCI310/tree/master/Game/app/release
